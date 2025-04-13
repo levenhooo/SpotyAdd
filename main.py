@@ -1,12 +1,20 @@
 import os
-from datetime import datetime
+import json
 import keyboard
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
+from datetime import datetime
 
 #Load all environment variables
 load_dotenv()
+
+#Load config.json
+with open("config.json") as config:
+    config = json.load(config)
+
+#Get hotkey from config
+hotkey = str(config["hotkey"])
 
 #Set needed permissions
 scope = ["user-read-currently-playing", "user-library-modify", "user-library-read"]
@@ -20,7 +28,7 @@ redirect_uri = os.getenv("redirect_uri")
 client = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri))
 
 while True:
-    if keyboard.is_pressed(hotkey="+"):
+    if keyboard.is_pressed(hotkey=hotkey):
         #Get the current song
         current_song = client.currently_playing(market=None, additional_types=None)
 
@@ -43,4 +51,3 @@ while True:
             time = new_time.replace("'", "")
             print(f"[{time}] Song is already in favourite songs.")
             continue
-        
