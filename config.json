@@ -1,3 +1,4 @@
 {
-    "hotkey": "+"
+    "hotkey_addtoPlaylist": "+",
+    "hotkey_pause": "P"
 }
