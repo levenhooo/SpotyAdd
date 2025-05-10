@@ -60,31 +60,31 @@ class SpotyAdd():
     
     def OnHotkey():
         #Check if spotify is running or there is a song being played
-            try:
-                #Get the current song
-                current_song = client.currently_playing(market=None, additional_types=None)
-                #Extract trackId and put it into the trackURL list
-                trackId = current_song["item"]["id"] 
-                trackURL = [f"http://open.spotify.com/track/{trackId}"]
-                trackName = current_song["item"]["name"]
-                #Check if current song is already in "Liked Songs" playlist
-                if client.current_user_saved_tracks_contains(tracks=trackURL)[0] == False:
-                    #Add current song to the "Liked Songs" playlist
-                    client.current_user_saved_tracks_add(tracks=trackURL)
-                    get_time = datetime.now()
-                    new_time = get_time.strftime("%H:%M:%S")
-                    current_time = new_time.replace("'", "")
-                    print(f"[{current_time}] {trackName} was added to Liked Songs.")
-                    time.sleep(1)
-                else:
-                    get_time = datetime.now()
-                    new_time = get_time.strftime("%H:%M:%S")
-                    current_time = new_time.replace("'", "")
-                    print(f"[{current_time}] {trackName} is already in Liked Songs.")
-                    time.sleep(1)
-            except:
-                print("Spotify is not running or there is no song playing.")
+        try:
+            #Get the current song
+            current_song = client.currently_playing(market=None, additional_types=None)
+            #Extract trackId and put it into the trackURL list
+            trackId = current_song["item"]["id"] 
+            trackURL = [f"http://open.spotify.com/track/{trackId}"]
+            trackName = current_song["item"]["name"]
+            #Check if current song is already in "Liked Songs" playlist
+            if client.current_user_saved_tracks_contains(tracks=trackURL)[0] == False:
+                #Add current song to the "Liked Songs" playlist
+                client.current_user_saved_tracks_add(tracks=trackURL)
+                get_time = datetime.now()
+                new_time = get_time.strftime("%H:%M:%S")
+                current_time = new_time.replace("'", "")
+                print(f"[{current_time}] {trackName} was added to Liked Songs.")
                 time.sleep(1)
+            else:
+                get_time = datetime.now()
+                new_time = get_time.strftime("%H:%M:%S")
+                current_time = new_time.replace("'", "")
+                print(f"[{current_time}] {trackName} is already in Liked Songs.")
+                time.sleep(1)
+        except:
+            print("Spotify is not running or there is no song playing.")
+            time.sleep(1)
 
     def RemoveHotkeyForPause():
         global CaptureInput, StopInput
