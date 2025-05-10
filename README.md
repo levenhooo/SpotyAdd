@@ -1,11 +1,6 @@
 # SpotyAdd
 An app that lets you add the currently playing song to your "Favourite Songs" playlist via a keyboard shortcut.
 
-# Requirements
-- keyboard (pip install keyboard)
-- dotenv (pip install dotenv)
-- spotipy (pip install spotipy)
-
 # Installation
 1. Go to https://developer.spotify.com and log into your spotify account
 2. Go to your dashboard and create a new app
@@ -17,4 +12,4 @@ An app that lets you add the currently playing song to your "Favourite Songs" pl
 8. Accept the request, then wait for the redirection to your selected URI (e.g., https://127.0.0.1:9090)
 9. Copy the entire URI, paste it into your terminal, and press Enter
 11. While listening to a song on Spotify, simply press the "+" key on your keyboard to add it to your "Liked Songs" playlist
-- Feel free to change the hotkeys in the config.json
+- Feel free to change the hotkey in the config.json
