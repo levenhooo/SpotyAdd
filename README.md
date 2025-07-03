@@ -13,3 +13,7 @@ An app that lets you add the currently playing song to your "Favourite Songs" pl
 9. Copy the entire URI, paste it into your terminal, and press Enter
 11. While listening to a song on Spotify, simply press the "+" key on your keyboard to add it to your "Liked Songs" playlist
 - Feel free to change the hotkey in the config.json
+
+# Starting
+- SpotyAdd requires you to install python3 on your computer
+- Simply execute the main.py with python3 (in the folder where all the files are)
