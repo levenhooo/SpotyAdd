@@ -15,5 +15,5 @@ An app that lets you add the currently playing song to your "Favourite Songs" pl
 - Feel free to change the hotkey in the config.json
 
 # Starting
-- SpotyAdd requires you to install python3 on your computer
+- SpotyAdd requires you to install python3 on your computer =>https://www.python.org/downloads/
 - Simply execute the main.py with python3 (in the folder where all the files are)
